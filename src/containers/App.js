@@ -5,7 +5,7 @@ import Home from "../components/Home.js"
 import Login from "../components/Login.js"
 import About from "../components/About.js"
 import Classes from "../components/Classes.js"
-import ContactUs from "../components/ContactUs.js"
+import Contact from "../components/Contact.js"
 
 const link = {
   width: "100px",
@@ -42,7 +42,14 @@ const Navbar = () => (
         background: "darkblue"
       }}
       >Contact Us</NavLink>
-
+    <NavLink
+      to="/login"
+      exact
+      style={link}
+      activeStyle={{
+        background: "darkblue"
+      }}
+      >Gym Login</NavLink>
   </div>
 )
 
@@ -56,6 +63,9 @@ class App extends Component {
             <Navbar />
             <Route exact path="/" component={Home} />
             <Route exact path="/login" component={Login} />
+            <Route exact path="/about" component={About} />
+            <Route exact path="/classes" component={Classes} />
+            <Route exact path="/contact" component={Contact} />
           </React.Fragment>
         </Router>
     );
