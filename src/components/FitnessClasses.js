@@ -18,13 +18,22 @@ class FitnessClasses extends React.Component {
 		return (
 			<div>
 				<h1>Classes Page</h1>
+				<ul>{this.props.FitnessClasses.map(function(oneClass) {
+					return (
+						<li>
+							<h2>{oneClass.name}</h2>
+						 	- {oneClass.description}
+						 		{oneClass.studio_id.name}
+						</li>
+						);
+				})}
+				</ul>
 			</div>
 		)
 	}
 }
 
 function mapStateToProps(state) {
-
 	return {
 		FitnessClasses: state.FitnessClasses
 	}
@@ -32,7 +41,9 @@ function mapStateToProps(state) {
 
 
 function updateClasses(data) {
-	return {type: "ADD_CLASSES", payload: data}
+	return {
+		type: "ADD_CLASSES", payload: data
+	}
 }
 
 function mapDispatchToProps(dispatch) {
