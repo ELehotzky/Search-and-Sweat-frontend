@@ -4,14 +4,14 @@ import {BrowserRouter as Router, Route, NavLink} from "react-router-dom";
 import Home from "../components/Home.js"
 import Login from "../components/Login.js"
 import About from "../components/About.js"
-import Classes from "../components/Classes.js"
+import FitnessClasses from "../components/FitnessClasses.js"
 import Contact from "../components/Contact.js"
 
 const link = {
   width: "100px",
   padding: "12px",
   margin: "0 6px 6px",
-  background: "blue",
+  background: "lightgreen",
   textDecoration: "none",
   color: "white"
 }
@@ -23,7 +23,7 @@ const Navbar = () => (
       exact
       style={link}
       activeStyle={{
-        background: "darkblue"
+        background: "green"
       }}
       >Home</NavLink>
     <NavLink
@@ -31,7 +31,7 @@ const Navbar = () => (
       exact
       style={link}
       activeStyle={{
-        background: "darkblue"
+        background: "green"
       }}
       >About</NavLink>
     <NavLink
@@ -39,7 +39,7 @@ const Navbar = () => (
       exact
       style={link}
       activeStyle={{
-        background: "darkblue"
+        background: "green"
       }}
       >Contact Us</NavLink>
     <NavLink
@@ -47,7 +47,7 @@ const Navbar = () => (
       exact
       style={link}
       activeStyle={{
-        background: "darkblue"
+        background: "green"
       }}
       >Gym Login</NavLink>
   </div>
@@ -64,7 +64,7 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/about" component={About} />
-            <Route exact path="/classes" component={Classes} />
+            <Route exact path="/classes" component={FitnessClasses} />
             <Route exact path="/contact" component={Contact} />
           </React.Fragment>
         </Router>

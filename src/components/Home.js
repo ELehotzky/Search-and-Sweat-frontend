@@ -1,5 +1,5 @@
 import React from "react";
-
+import {BrowserRouter as Router, Route, NavLink} from "react-router-dom";
 
 class Home extends React.Component {
 	
@@ -12,7 +12,9 @@ class Home extends React.Component {
 	    <div>
 		    <h1>Home!</h1>
 		    <div>
+		    	<NavLink to="/classes">
 		    	<button onClick={this.handleClick}>Explore Classes</button>
+		    	</NavLink>
 		    </div>
 	    </div>
 	    )
