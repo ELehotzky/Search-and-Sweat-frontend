@@ -2,14 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {createStore, applyMiddleware} from "redux";
 import {Provider} from "react-redux";
-import classReducer from "./reducers/classReducer.js";
+import rootReducer from "./reducers/rootReducer.js";
 import './index.css';
 import App from './containers/App';
 import thunk from "redux-thunk";
 import * as serviceWorker from './serviceWorker';
 
 const store = createStore(
-	classReducer,
+	rootReducer,
 	applyMiddleware(thunk)
 	);
 

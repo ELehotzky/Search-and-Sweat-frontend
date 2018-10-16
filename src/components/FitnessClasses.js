@@ -1,8 +1,7 @@
 import React from "react";
-import FitnessClass from "./FitnessClass.js"
+// import FitnessClass from "./FitnessClass.js"
 import classApi from "../api/classApi.js"
 import {connect} from "react-redux"
-
 
 class FitnessClasses extends React.Component {
   
@@ -13,32 +12,44 @@ class FitnessClasses extends React.Component {
 		})
 	}
 
+	mapCategories(oneClass) {
+
+	return (
+			oneClass.fitness_class_categories.map((oneClass, index) => (
+				<p>{oneClass.categoryName}</p>
+			)))
+	
+}
+
+
 	render() {
-		console.log(this.props.FitnessClasses)
+		if (this.props.FitnessClasses.length < 1) {
+			return (
+				<div>Loading...</div>)
+		} else 
 		return (
 			<div>
-				<h1>Classes Page</h1>
-				<ul>{this.props.FitnessClasses.map(function(oneClass) {
-					return (
-						<li>
+				<h1>Classes Page</h1> 
+		 		<ul>{this.props.FitnessClasses.map((oneClass, index) => (
+						<li key={index}>
 							<h2>{oneClass.name}</h2>
-						 	- {oneClass.description}
-						 		{oneClass.studio_id.name}
+							<p>{oneClass.studio.name} -- ${oneClass.price}</p>
+							<p>{this.mapCategories(oneClass)}</p>
+						 	<div>- {oneClass.description}</div>
 						</li>
-						);
-				})}
+				))}
 				</ul>
-			</div>
+		 	</div>
 		)
 	}
 }
+
 
 function mapStateToProps(state) {
 	return {
 		FitnessClasses: state.FitnessClasses
 	}
 }
-
 
 function updateClasses(data) {
 	return {
