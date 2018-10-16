@@ -1,5 +1,6 @@
 let defaultState = {
-	FitnessClasses: []
+	FitnessClasses: [],
+	Filters: []
 }
 
 export default function rootReducer (state = defaultState, action) {
@@ -14,6 +15,13 @@ export default function rootReducer (state = defaultState, action) {
 					return (category.categoryName==="Yoga")
 				})
 			})}
+
+		case "ADD_TO_FILTER":
+			return {...state, Filters: [...state.Filters, action.payload]}
+		
+		case "REMOVE_FROM_FILTER":
+			let filteredClasses = state.Filters.filter(fitnessClass => fitnessClass !== action.payload)
+			return {...state, Filters: filteredClasses}
 
 		default: 
 		return state;

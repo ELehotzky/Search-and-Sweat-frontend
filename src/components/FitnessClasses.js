@@ -2,6 +2,7 @@ import React from "react";
 // import FitnessClass from "./FitnessClass.js"
 import classApi from "../api/classApi.js"
 import {connect} from "react-redux"
+import Time from "react-time"
 
 class FitnessClasses extends React.Component {
   
@@ -13,14 +14,29 @@ class FitnessClasses extends React.Component {
 	}
 
 	mapCategories(oneClass) {
-
-	return (
+		return (
 			oneClass.fitness_class_categories.map((oneClass, index) => (
-				<p>{oneClass.categoryName}</p>
-			)))
-	
-}
+				<p>Type: {oneClass.categoryName}</p>
+			))
+		)
+	}
 
+	mapDetails(oneClass) {
+		return (
+			oneClass.fitness_class_details.map((oneClass, index) => (
+				<div>
+					<p>Time: <Time value={oneClass.time} format="MM/DD/YYYY hh:mma" /></p>
+					<p>Instructor: {oneClass.instructor}</p>
+				</div>
+			))
+		)
+	}
+
+	checkIfFiltered = (fitnessClass) => {
+		return fitnessClass.fitness_class_categories
+			.map(category => category.categoryName.toLowerCase())
+			.some( category => this.props.Filters.includes(category))
+	}
 
 	render() {
 		if (this.props.FitnessClasses.length < 1) {
@@ -30,12 +46,16 @@ class FitnessClasses extends React.Component {
 		return (
 			<div>
 				<h1>Classes Page</h1> 
-		 		<ul>{this.props.FitnessClasses.map((oneClass, index) => (
+		 		<ul>{this.props.FitnessClasses.filter(fClass => {
+		 			return this.checkIfFiltered(fClass)
+		 		})
+		 			.map((oneClass, index) => (
 						<li key={index}>
 							<h2>{oneClass.name}</h2>
 							<p>{oneClass.studio.name} -- ${oneClass.price}</p>
+							<p>{this.mapDetails(oneClass)}</p>
 							<p>{this.mapCategories(oneClass)}</p>
-						 	<div>- {oneClass.description}</div>
+						 	<p>- {oneClass.description}</p>
 						</li>
 				))}
 				</ul>
@@ -47,7 +67,8 @@ class FitnessClasses extends React.Component {
 
 function mapStateToProps(state) {
 	return {
-		FitnessClasses: state.FitnessClasses
+		FitnessClasses: state.FitnessClasses,
+		Filters: state.Filters
 	}
 }
 

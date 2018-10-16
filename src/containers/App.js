@@ -5,6 +5,7 @@ import Home from "../components/Home.js"
 import Login from "../components/Login.js"
 import About from "../components/About.js"
 import FitnessClasses from "../components/FitnessClasses.js"
+import FitnessClassContainer from "./FitnessClassContainer.js"
 import Contact from "../components/Contact.js"
 
 const link = {
@@ -64,7 +65,7 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/about" component={About} />
-            <Route exact path="/classes" component={FitnessClasses} />
+            <Route exact path="/classes" component={FitnessClassContainer} />
             <Route exact path="/contact" component={Contact} />
           </React.Fragment>
         </Router>
