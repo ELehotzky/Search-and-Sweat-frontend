@@ -1,3 +1,5 @@
+import {createBrowserHistory as browserHistory} from "history";
+
 let defaultState = {
 	FitnessClasses: [],
 	Filters: []
@@ -16,11 +18,16 @@ export default function rootReducer (state = defaultState, action) {
 		// 		})
 		// 	})}
 
+		case "LOG_IN_SUCCESS": 
+			console.log(action.payload)
+			browserHistory.push("/")
+			return !!sessionStorage.jwt
+
 		case "ADD_NEW_CLASS":
 			console.log(action.payload)
 			console.log({FitnessClasses: state.FitnessClasses.concat(action.payload.text) });
 			return {FitnessClasses: state.FitnessClasses.concat(action.payload.text) }
-			
+
 		case "ADD_TO_FILTER":
 			return {...state, Filters: [...state.Filters, action.payload]}
 		

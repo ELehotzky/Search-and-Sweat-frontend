@@ -1,18 +1,20 @@
 import React, { Component } from 'react';
+import {connect} from "react-redux";
+import {bindActionCreators} from "redux";
+import * as sessionActions from "../actions/sessionActions.js"
 
 export class Login extends Component {
 
   state = {
-    email: "",
-    password: "",
-    currentAdmin: {
-      email: ""
+    credentials: {
+      email: "",
+      password: "",
     }
   }
 
 componentDidMount() {
   const token = localStorage.token;
-  fetch("http://localhost:3000/form", {
+  fetch("http://localhost:3000/login", {
     method: "GET", 
     headers: {
       Authorization: `Bearer ${token}`
@@ -22,20 +24,25 @@ componentDidMount() {
       .then(data => {
       if (!data.error) {
         this.setState({
-          currentAdmin: data
+          credentials: data
         })
       }
     })
 }
 
 handleChange = (event) => {
+  let field = event.target.name;
+  let credentials = this.state.credentials
+  credentials[field] = event.target.value;
+  console.log(
   this.setState({
-    [event.target.name]: event.target.value
-  });
+    credentials: credentials
+  }))
 }
 
-  logIn = (event) => {
-    event.preventDefault();
+handleSubmit = (event) => {
+  event.preventDefault();
+  console.log(this.props.actions.loginAdmin(this.state.credentials));
 
     fetch("http://localhost:3000/api/v1/admins", {
       method: "POST",
@@ -66,12 +73,12 @@ handleChange = (event) => {
   render() {
     return (
       <div>
-        <form onSubmit={this.logIn}>
+        <form onClick={this.handleSubmit}>
           <div>
-            <input type="text" name="email" placeholder="Email Address" />
+            <input type="text" name="email" onChange={this.handleChange} value={this.state.credentials.email} placeholder="Email Address" />
           </div>
           <div>
-            <input type="password" name="password" placeholder="Password" />
+            <input type="password" name="password" onChange={this.handleChange} value={this.state.credentials.password} placeholder="Password" />
           </div>
           <div>
             <button type="submit">Submit</button>
@@ -82,4 +89,18 @@ handleChange = (event) => {
   }
 }
 
-export default Login;
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators(sessionActions, dispatch)
+  }
+}
+
+export default connect(null, mapDispatchToProps)(Login);
+
+
+
+
+
+
+
+
