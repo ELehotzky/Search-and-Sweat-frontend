@@ -16,6 +16,9 @@ export default function rootReducer (state = defaultState, action) {
 				})
 			})}
 
+		case "ADD_NEW_CLASS":
+			console.log({FitnessClasses: state.FitnessClasses.concat(action.payload.text) });
+
 		case "ADD_TO_FILTER":
 			return {...state, Filters: [...state.Filters, action.payload]}
 		

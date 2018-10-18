@@ -7,6 +7,8 @@ import About from "../components/About.js"
 import FitnessClasses from "../components/FitnessClasses.js"
 import FitnessClassContainer from "./FitnessClassContainer.js"
 import Contact from "../components/Contact.js"
+import NewClassForm from "../components/NewClassForm.js"
+
 
 const link = {
   width: "100px",
@@ -54,8 +56,6 @@ const Navbar = () => (
   </div>
 )
 
-
-
 class App extends Component {
   render() {
     return (
@@ -67,6 +67,7 @@ class App extends Component {
             <Route exact path="/about" component={About} />
             <Route exact path="/classes" component={FitnessClassContainer} />
             <Route exact path="/contact" component={Contact} />
+            <Route exact path="/form" component={NewClassForm} />
           </React.Fragment>
         </Router>
     );
