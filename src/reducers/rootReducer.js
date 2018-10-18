@@ -9,16 +9,18 @@ export default function rootReducer (state = defaultState, action) {
 		case "ADD_CLASSES":
 			return {...state, FitnessClasses: action.payload}
 
-		case "FILTER_CLASSES":
-			return {...state, FitnessClasses: action.payload.filter(fitnessClass => {
-				return fitnessClass.fitness_class_categories.some(category => {
-					return (category.categoryName==="Yoga")
-				})
-			})}
+		// case "FILTER_CLASSES":
+		// 	return {...state, FitnessClasses: action.payload.filter(fitnessClass => {
+		// 		return fitnessClass.fitness_class_categories.some(category => {
+		// 			return (category.categoryName==="Yoga")
+		// 		})
+		// 	})}
 
 		case "ADD_NEW_CLASS":
+			console.log(action.payload)
 			console.log({FitnessClasses: state.FitnessClasses.concat(action.payload.text) });
-
+			return {FitnessClasses: state.FitnessClasses.concat(action.payload.text) }
+			
 		case "ADD_TO_FILTER":
 			return {...state, Filters: [...state.Filters, action.payload]}
 		
