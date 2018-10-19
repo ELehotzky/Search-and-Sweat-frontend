@@ -1,8 +1,10 @@
+import * as types from "../actions/actionTypes.js"
 import {createBrowserHistory as browserHistory} from "history";
 
 let defaultState = {
 	FitnessClasses: [],
-	Filters: []
+	Filters: [],
+	session: !!sessionStorage.jwt
 }
 
 export default function rootReducer (state = defaultState, action) {

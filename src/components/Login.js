@@ -34,15 +34,14 @@ handleChange = (event) => {
   let field = event.target.name;
   let credentials = this.state.credentials
   credentials[field] = event.target.value;
-  console.log(
-  this.setState({
+  return this.setState({
     credentials: credentials
-  }))
+  })
 }
 
 handleSubmit = (event) => {
   event.preventDefault();
-  console.log(this.props.actions.loginAdmin(this.state.credentials));
+  this.props.actions.logInAdmin(this.state.credentials);
 
     fetch("http://localhost:3000/api/v1/admins", {
       method: "POST",

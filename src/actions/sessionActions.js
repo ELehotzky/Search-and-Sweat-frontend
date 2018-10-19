@@ -5,11 +5,11 @@ export function loginSuccess() {
 	return {type: types.LOG_IN_SUCCESS}
 }
 
-export function logInUser(credentials) {
+export function logInAdmin(credentials) {
 	return function(dispatch) {
 		return sessionApi.login(credentials).then(resp => {
 			sessionStorage.setItem("jwt", resp.jwt);
-			dispatch(loginSuccess());
+			dispatch(loginSuccess())
 		}).catch(error => {
 			throw(error);
 		});
