@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {connect} from "react-redux";
 import '../App.css';
 import {BrowserRouter as Router, Route, NavLink} from "react-router-dom";
 import Home from "../components/Home.js"
@@ -58,13 +59,13 @@ const Navbar = () => (
 
 class App extends Component {
   render() {
-    let token = localStorage.token
+    const isLoggedIn = this.props.isLoggedIn
     return (
         <Router>
           <React.Fragment>
             <Navbar />
             <Route exact path="/" component={Home} />
-            <Route exact path="/login" component={localStorage.token ? NewClassForm :Login} />
+            <Route exact path="/login" component={isLoggedIn ? NewClassForm : Login} />
             <Route exact path="/about" component={About} />
             <Route exact path="/classes" component={FitnessClassContainer} />
             <Route exact path="/contact" component={Contact} />
@@ -75,5 +76,12 @@ class App extends Component {
   }
 }
 
+const mapStateToProps = (state) => {
+  return {
+    isLoggedIn: (state.isLoggedIn)
+  }
+}
 
-export default App;
+
+
+export default connect(mapStateToProps, null)(App);

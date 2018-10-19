@@ -46,9 +46,16 @@ class NewClassForm extends Component {
 			.then(data => console.log("success" + data))
 	}
 
+	handleLogOut = (event) => {
+			localStorage.token = ""
+	}
+
 	render() {
+		// debugger
 		return (
 			<div>
+				<h3>Welcome, {this.props.currentAdmin.name}</h3>
+				<button onClick={this.handleLogOut}>Log Out</button>
 				<h1>Enter a new class</h1>
 				<form onSubmit={this.handleSubmit}>
 						<div><label>Class Name</label>
@@ -80,13 +87,19 @@ class NewClassForm extends Component {
 	}
 }
 
+const mapStateToProps = (state) => {
+	return {
+		currentAdmin: (state.currentAdmin)
+	}
+}
+
 const mapDispatchToProps = (dispatch) => {
 	return {
 		addNewClass: (formData) => dispatch({type: "ADD_NEW_CLASS", payload: formData})
 	}
 }
 
-export default connect(null, mapDispatchToProps)(NewClassForm);
+export default connect(mapStateToProps, mapDispatchToProps)(NewClassForm);
 
 
 

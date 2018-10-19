@@ -4,7 +4,8 @@ import {createBrowserHistory as browserHistory} from "history";
 let defaultState = {
 	FitnessClasses: [],
 	Filters: [],
-	session: !!sessionStorage.jwt
+	currentAdmin: {},
+	isLoggedIn: false
 }
 
 export default function rootReducer (state = defaultState, action) {
@@ -21,9 +22,9 @@ export default function rootReducer (state = defaultState, action) {
 		// 	})}
 
 		case "LOG_IN_SUCCESS": 
-			console.log(action.payload)
+			console.log(!!localStorage.token)
 			// browserHistory.push("/")
-			return !!sessionStorage.jwt
+			return {...state, currentAdmin: action.payload, isLoggedIn: true}
 
 		case "ADD_NEW_CLASS":
 			console.log(action.payload)

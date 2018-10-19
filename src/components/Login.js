@@ -9,7 +9,8 @@ export class Login extends Component {
     credentials: {
       email: "",
       password: "",
-    }
+    },
+    currentAdmin: {}
   }
 
 componentDidMount() {
@@ -24,7 +25,7 @@ componentDidMount() {
       .then(data => {
       if (!data.error) {
         this.setState({
-          credentials: data
+          currentAdmin: data
         })
       } else{
         console.log(data.error)
@@ -45,29 +46,6 @@ handleSubmit = (event) => {
   event.preventDefault();
   this.props.actions.logInAdmin(this.state.credentials);
 
-    // fetch("http://localhost:3000/api/v1/admins", {
-    //   method: "POST",
-    //   body: JSON.stringify({
-    //     email: this.state.email,
-    //     password: this.state.password
-    //   }),
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   }
-    // })
-    // .then(resp => resp.text())
-    // .then(data => {
-    //   if (!data.error) {
-    //     localStorage.token = data.token;
-    //     this.setState({
-    //       currentAdmin: data.admin
-    //     })
-    //   } else {
-    //     this.setState({
-    //       loginError: data.error
-    //     })
-    //   }
-    // })
   }
 
 
