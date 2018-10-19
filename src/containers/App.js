@@ -58,12 +58,13 @@ const Navbar = () => (
 
 class App extends Component {
   render() {
+    let token = localStorage.token
     return (
         <Router>
           <React.Fragment>
             <Navbar />
             <Route exact path="/" component={Home} />
-            <Route exact path="/login" component={Login} />
+            <Route exact path="/login" component={localStorage.token ? NewClassForm :Login} />
             <Route exact path="/about" component={About} />
             <Route exact path="/classes" component={FitnessClassContainer} />
             <Route exact path="/contact" component={Contact} />

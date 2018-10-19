@@ -22,7 +22,7 @@ export default function rootReducer (state = defaultState, action) {
 
 		case "LOG_IN_SUCCESS": 
 			console.log(action.payload)
-			browserHistory.push("/")
+			// browserHistory.push("/")
 			return !!sessionStorage.jwt
 
 		case "ADD_NEW_CLASS":

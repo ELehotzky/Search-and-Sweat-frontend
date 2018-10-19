@@ -14,7 +14,7 @@ export class Login extends Component {
 
 componentDidMount() {
   const token = localStorage.token;
-  fetch("http://localhost:3000/login", {
+  fetch("http://localhost:3000/api/v1/profile", {
     method: "GET", 
     headers: {
       Authorization: `Bearer ${token}`
@@ -26,6 +26,8 @@ componentDidMount() {
         this.setState({
           credentials: data
         })
+      } else{
+        console.log(data.error)
       }
     })
 }
@@ -43,36 +45,36 @@ handleSubmit = (event) => {
   event.preventDefault();
   this.props.actions.logInAdmin(this.state.credentials);
 
-    fetch("http://localhost:3000/api/v1/admins", {
-      method: "POST",
-      body: JSON.stringify({
-        email: this.state.email,
-        password: this.state.password
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      }
-    })
-    .then(resp => resp.text())
-    .then(data => {
-      if (!data.error) {
-        localStorage.token = data.token;
-        this.setState({
-          currentAdmin: data.admin
-        })
-      } else {
-        this.setState({
-          loginError: data.error
-        })
-      }
-    })
+    // fetch("http://localhost:3000/api/v1/admins", {
+    //   method: "POST",
+    //   body: JSON.stringify({
+    //     email: this.state.email,
+    //     password: this.state.password
+    //   }),
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   }
+    // })
+    // .then(resp => resp.text())
+    // .then(data => {
+    //   if (!data.error) {
+    //     localStorage.token = data.token;
+    //     this.setState({
+    //       currentAdmin: data.admin
+    //     })
+    //   } else {
+    //     this.setState({
+    //       loginError: data.error
+    //     })
+    //   }
+    // })
   }
 
 
   render() {
     return (
       <div>
-        <form onClick={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit}>
           <div>
             <input type="text" name="email" onChange={this.handleChange} value={this.state.credentials.email} placeholder="Email Address" />
           </div>
