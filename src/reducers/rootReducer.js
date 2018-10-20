@@ -26,6 +26,10 @@ export default function rootReducer (state = defaultState, action) {
 			// browserHistory.push("/")
 			return {...state, currentAdmin: action.payload, isLoggedIn: true}
 
+		case "LOG_OUT_SUCCESS":
+			localStorage.token = "";
+			return {...state, currentAdmin: {}, isLoggedIn: false}
+
 		case "ADD_NEW_CLASS":
 			console.log(action.payload)
 			console.log({FitnessClasses: state.FitnessClasses.concat(action.payload.text) });

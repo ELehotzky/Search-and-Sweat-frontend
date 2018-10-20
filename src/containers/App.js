@@ -69,7 +69,7 @@ class App extends Component {
             <Route exact path="/about" component={About} />
             <Route exact path="/classes" component={FitnessClassContainer} />
             <Route exact path="/contact" component={Contact} />
-            <Route exact path="/form" component={NewClassForm} />
+            <Route exact path="/form" component={isLoggedIn ? Home : NewClassForm} />
           </React.Fragment>
         </Router>
     );

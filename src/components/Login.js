@@ -45,7 +45,6 @@ handleChange = (event) => {
 handleSubmit = (event) => {
   event.preventDefault();
   this.props.actions.logInAdmin(this.state.credentials);
-
   }
 
 

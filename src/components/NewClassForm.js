@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from "react-redux";
+import {Link} from "react-router-dom";
 
 class NewClassForm extends Component {
 	
@@ -55,7 +56,9 @@ class NewClassForm extends Component {
 		return (
 			<div>
 				<h3>Welcome, {this.props.currentAdmin.name}</h3>
-				<button onClick={this.handleLogOut}>Log Out</button>
+				<Link to="/">
+					<button onClick={this.props.handleLogOut}>Log Out</button>
+				</Link>
 				<h1>Enter a new class</h1>
 				<form onSubmit={this.handleSubmit}>
 						<div><label>Class Name</label>
@@ -95,7 +98,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
 	return {
-		addNewClass: (formData) => dispatch({type: "ADD_NEW_CLASS", payload: formData})
+		addNewClass: (formData) => dispatch({type: "ADD_NEW_CLASS", payload: formData}),
+		handleLogOut: () => dispatch({type: "LOG_OUT_SUCCESS"})
 	}
 }
 

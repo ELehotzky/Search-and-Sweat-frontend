@@ -18,3 +18,15 @@ export function logInAdmin(credentials) {
 		});
 	}
 }
+
+export function logOutSuccess(admin) {
+	return {type: types.LOG_OUT_SUCCESS,
+		payload: admin
+	}
+}
+
+export function logOutAdmin() {
+	return function(dispatch) {
+	
+	}
+}
