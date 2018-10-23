@@ -11,8 +11,9 @@ class NewClassForm extends Component {
 		description: '',
 		price: '',
 		class_length: '',
+		//'fitness_class_details': [ { time: '', instructor:''} ],
 		time: '',
-		categories: []
+		category_ids: []
 	}
 
 	handleChange = (e) => {
@@ -24,12 +25,12 @@ class NewClassForm extends Component {
 	handleCheckbox = (e) => {
 		if (e.target.checked) {
 		this.setState({
-			categories: [...this.state.categories, e.target.name]
+			category_ids: [...this.state.category_ids, e.target.value]
 		}, () => console.log(this.state))
 	} else {
-		let unchecked = e.target.name
+		let unchecked = e.target.value
 		this.setState({ 
-			categories: this.state.categories.filter((unchecked, i) => i)
+			category_ids: this.state.category_ids.filter((unchecked, i) => i)
 		}, () => console.log(this.state))
 		}
 	}
@@ -74,16 +75,16 @@ class NewClassForm extends Component {
 						<div><label>Date/Time</label>
 						<input name="time" type="datetime-local" onChange={this.handleChange} value={this.state.time}/></div>
 						<div><label>Select Class Type(s): </label></div>
-						Cardio<input name="cardio" type="checkbox" onChange={this.handleCheckbox} value={this.state.cardio} />
-						Spin<input name="spin" type="checkbox" onChange={this.handleCheckbox} value={this.state.spin} />
-						Pilates<input name="pilates" type="checkbox" onChange={this.handleCheckbox} value={this.state.pilates} />
-						Circuit Training<input name="circuit_training" type="checkbox" onChange={this.handleCheckbox} value={this.state.circuit_training} />
-						Kickboxing<input name="kickboxing" type="checkbox" onChange={this.handleCheckbox} value={this.state.kickboxing} />
-						Yoga<input name="yoga" type="checkbox" onChange={this.handleCheckbox} value={this.state.yoga} />
-						Boxing<input name="boxing" type="checkbox" onChange={this.handleCheckbox} value={this.state.boxing} />
-						Rowing<input name="rowing" type="checkbox" onChange={this.handleCheckbox} value={this.state.rowing} />
-						Barre<input name="barre" type="checkbox" onChange={this.handleCheckbox} value={this.state.barre} />
-						Strength Training<input name="strength_training" type="checkbox" onChange={this.handleCheckbox} value={this.state.strength_training} />
+						Cardio<input name="cardio" type="checkbox" onChange={this.handleCheckbox} value={11} />
+						Spin<input name="spin" type="checkbox" onChange={this.handleCheckbox} value={12} />
+						Pilates<input name="pilates" type="checkbox" onChange={this.handleCheckbox} value={13} />
+						Circuit Training<input name="circuit_training" type="checkbox" onChange={this.handleCheckbox} value={14} />
+						Kickboxing<input name="kickboxing" type="checkbox" onChange={this.handleCheckbox} value={15} />
+						Yoga<input name="yoga" type="checkbox" onChange={this.handleCheckbox} value={16} />
+						Boxing<input name="boxing" type="checkbox" onChange={this.handleCheckbox} value={17} />
+						Rowing<input name="rowing" type="checkbox" onChange={this.handleCheckbox} value={18} />
+						Barre<input name="barre" type="checkbox" onChange={this.handleCheckbox} value={19} />
+						Strength Training<input name="strength_training" type="checkbox" onChange={this.handleCheckbox} value={20} />
 					<div><input type="submit" /></div>
 				</form>
 				<h1>Add Details to Class</h1>
