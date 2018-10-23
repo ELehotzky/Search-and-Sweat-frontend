@@ -1,6 +1,6 @@
 import React from "react";
-import {BrowserRouter as Router, Route, NavLink} from "react-router-dom";
-import { Button, Card, Row, Col } from 'materialize-css';
+import {BrowserRouter as NavLink} from "react-router-dom";
+import { Button, Card, Row, Col } from 'react-materialize';
 
 class Home extends React.Component {
 
@@ -10,7 +10,7 @@ class Home extends React.Component {
 		    <h1>Home!</h1>
 		    <div>
 		    	<NavLink to="/classes">
-		    	<button waves='light'>Explore Classes</button>
+		    	<Button waves='light'>Explore Classes</Button>
 		    	</NavLink>
 		    </div>
 	    </div>

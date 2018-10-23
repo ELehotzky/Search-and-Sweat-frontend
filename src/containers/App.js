@@ -6,12 +6,12 @@ import {bindActionCreators} from "redux";
 import Home from "../components/Home.js"
 import Login from "../components/Login.js"
 import About from "../components/About.js"
-import FitnessClasses from "../components/FitnessClasses.js"
+// import FitnessClasses from "../components/FitnessClasses.js"
 import FitnessClassContainer from "./FitnessClassContainer.js"
 import Contact from "../components/Contact.js"
 import NewClassForm from "../components/NewClassForm.js"
 import * as sessionActions from "../actions/sessionActions.js"
-import {logInToken} from "../actions/sessionActions.js"
+// import {logInToken} from "../actions/sessionActions.js"
 // import { Button, Card, Row, Col } from 'materialize-css';
 
 
@@ -65,7 +65,6 @@ class App extends Component {
 
   componentDidMount() {
   const token = localStorage.token;
-  console.log(token)
    if (token !== "undefined"){
       fetch("http://localhost:3000/api/v1/profile", {
           method: "GET", 
@@ -85,7 +84,7 @@ class App extends Component {
 
 
   render() {
-    const isLoggedIn = this.props.isLoggedIn
+    // const isLoggedIn = this.props.isLoggedIn
     return (
         <Router>
           <React.Fragment>

@@ -1,5 +1,5 @@
-import * as types from "../actions/actionTypes.js"
-import {createBrowserHistory as browserHistory} from "history";
+// import * as types from "../actions/actionTypes.js"
+// import {createBrowserHistory as browserHistory} from "history";
 
 let defaultState = {
 	FitnessClasses: [],

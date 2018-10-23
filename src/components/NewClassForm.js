@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from "react-redux";
 import {Link} from "react-router-dom";
-import {logOutSuccess} from "../actions/sessionActions.js"
 // import { Button, Card, Row, Col } from 'materialize-css';
 
 class NewClassForm extends Component {
@@ -28,7 +27,7 @@ class NewClassForm extends Component {
 			category_ids: [...this.state.category_ids, e.target.value]
 		}, () => console.log(this.state))
 	} else {
-		let unchecked = e.target.value
+		// let unchecked = e.target.value
 		this.setState({ 
 			category_ids: this.state.category_ids.filter((unchecked, i) => i)
 		}, () => console.log(this.state))
