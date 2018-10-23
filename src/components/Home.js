@@ -1,11 +1,8 @@
 import React from "react";
 import {BrowserRouter as Router, Route, NavLink} from "react-router-dom";
+import { Button, Card, Row, Col } from 'materialize-css';
 
 class Home extends React.Component {
-	
-	handleClick = (event) => {
-	console.log(event.type);
-	}
 
 	render() {
 	return (
@@ -13,7 +10,7 @@ class Home extends React.Component {
 		    <h1>Home!</h1>
 		    <div>
 		    	<NavLink to="/classes">
-		    	<button onClick={this.handleClick}>Explore Classes</button>
+		    	<button waves='light'>Explore Classes</button>
 		    	</NavLink>
 		    </div>
 	    </div>

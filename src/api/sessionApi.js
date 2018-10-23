@@ -10,12 +10,29 @@ class SessionApi {
 		});
 
 		return fetch(request).then(resp => {
+			console.log("response", resp)
 			return resp.json();
 		}).catch(error => {
 			console.log("error")
 			return error;
 		});
 	}
+
+	static tokenLogin(token) {
+		console.log(token)
+		fetch("http://localhost:3000/api/v1/profile", {
+			method: "GET", 
+			headers: {
+			Authorization: `Bearer ${token}`
+			}
+		}).then(resp => {
+			return resp.json();
+			})
+			.catch(error => {
+				console.log("error")
+				return error;
+			});
+		}
 }
 
 export default SessionApi;

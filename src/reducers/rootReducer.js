@@ -22,18 +22,17 @@ export default function rootReducer (state = defaultState, action) {
 		// 	})}
 
 		case "LOG_IN_SUCCESS": 
-			console.log(!!localStorage.token)
 			// browserHistory.push("/")
 			return {...state, currentAdmin: action.payload, isLoggedIn: true}
 
 		case "LOG_OUT_SUCCESS":
-			localStorage.token = "";
+			localStorage.clear()
 			return {...state, currentAdmin: {}, isLoggedIn: false}
 
 		case "ADD_NEW_CLASS":
 			console.log(action.payload)
-			console.log({FitnessClasses: state.FitnessClasses.concat(action.payload.text) });
-			return {FitnessClasses: state.FitnessClasses.concat(action.payload.text) }
+			console.log(state.FitnessClasses)
+			return {...state, FitnessClasses: [...state.FitnessClasses, action.payload] }
 
 		case "ADD_TO_FILTER":
 			return {...state, Filters: [...state.Filters, action.payload]}

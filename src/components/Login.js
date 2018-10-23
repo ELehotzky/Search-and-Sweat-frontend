@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
 import * as sessionActions from "../actions/sessionActions.js"
+// import { Button, Card, Row, Col } from 'materialize-css';
 
 export class Login extends Component {
 
@@ -9,28 +10,27 @@ export class Login extends Component {
     credentials: {
       email: "",
       password: "",
-    },
-    currentAdmin: {}
+    }
   }
 
 componentDidMount() {
-  const token = localStorage.token;
-  fetch("http://localhost:3000/api/v1/profile", {
-    method: "GET", 
-    headers: {
-      Authorization: `Bearer ${token}`
-    }
-  })
-      .then(resp => resp.json())
-      .then(data => {
-      if (!data.error) {
-        this.setState({
-          currentAdmin: data
-        })
-      } else{
-        console.log(data.error)
-      }
-    })
+  // const token = localStorage.token;
+  // fetch("http://localhost:3000/api/v1/profile", {
+  //   method: "GET", 
+  //   headers: {
+  //     Authorization: `Bearer ${token}`
+  //   }
+  // })
+  //     .then(resp => resp.json())
+  //     .then(data => {
+  //     if (!data.error) {
+  //       this.setState({
+  //         currentAdmin: data
+  //       })
+  //     } else{
+  //       console.log(data.error)
+  //     }
+  //   })
 }
 
 handleChange = (event) => {

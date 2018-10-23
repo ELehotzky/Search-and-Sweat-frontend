@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import {connect} from "react-redux";
 import {Link} from "react-router-dom";
+import {logOutSuccess} from "../actions/sessionActions.js"
+// import { Button, Card, Row, Col } from 'materialize-css';
 
 class NewClassForm extends Component {
 	
@@ -16,7 +18,7 @@ class NewClassForm extends Component {
 	handleChange = (e) => {
 		this.setState({
 			[e.target.name]: e.target.value
-		}, () => console.log(this.state))
+		})
 	}
 
 	handleCheckbox = (e) => {
@@ -34,8 +36,9 @@ class NewClassForm extends Component {
 
 	handleSubmit = (event) => {
 		event.preventDefault();
-		this.props.addNewClass(this.state)
+		// this.props.addNewClass(this.state)
 		let formData = this.state;
+		formData.studio_id = this.props.currentAdmin.studios[0].id
 
 		fetch("http://localhost:3000/api/v1/fitness_classes", {
 			method: "POST",
@@ -44,23 +47,21 @@ class NewClassForm extends Component {
 			},
 			body: JSON.stringify(formData)
 		}).then(resp => resp.json())
-			.then(data => console.log("success" + data))
-	}
-
-	handleLogOut = (event) => {
-			localStorage.token = ""
+			.then(data => this.props.addNewClass(data))
 	}
 
 	render() {
-		// debugger
-		return (
+		console.log(this.props.currentAdmin)
+		return this.props.currentAdmin.name ? 
+		 (
 			<div>
-				<h3>Welcome, {this.props.currentAdmin.name}</h3>
+		{		<h3>Welcome, {this.props.currentAdmin.name}</h3>}
 				<Link to="/">
 					<button onClick={this.props.handleLogOut}>Log Out</button>
 				</Link>
 				<h1>Enter a new class</h1>
 				<form onSubmit={this.handleSubmit}>
+						<input type="hidden" name="studio_id" value={this.props.currentAdmin.studios[0].id} /> 
 						<div><label>Class Name</label>
 						<input name="name" type="text" onChange={this.handleChange} value={this.state.name}/></div>
 						<div><label>Description</label>
@@ -86,7 +87,8 @@ class NewClassForm extends Component {
 					<div><input type="submit" /></div>
 				</form>
 			</div>
-		);
+		) : 
+		 (<p> Loading </p>)
 	}
 }
 
