@@ -12,7 +12,6 @@ import Contact from "../components/Contact.js"
 import NewClassForm from "../components/NewClassForm.js"
 import * as sessionActions from "../actions/sessionActions.js"
 // import {logInToken} from "../actions/sessionActions.js"
-// import { Button, Card, Row, Col } from 'materialize-css';
 
 
 const link = {

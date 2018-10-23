@@ -5,10 +5,13 @@ import {Button} from "react-bootstrap";
 class Home extends React.Component {
 
 	render() {
+
+		const wellStyles = {maxWidth: 400, margin: "0 auto 10px"}
+
 	return (
 	    <div>
 		    <h1>Home!</h1>
-		    <div>
+		    <div className="well" style={wellStyles}>
 		    	<NavLink to="/classes">
 		    	<Button bsStyle="success" bsSize="large" block>Explore Classes</Button>
 		    	</NavLink>
