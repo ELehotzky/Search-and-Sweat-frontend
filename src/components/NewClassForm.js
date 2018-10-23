@@ -49,8 +49,9 @@ class NewClassForm extends Component {
 		}).then(resp => resp.json())
 			.then(data => this.props.addNewClass(data))
 	}
-
+	
 	render() {
+
 		console.log(this.props.currentAdmin)
 		return this.props.currentAdmin.name ? 
 		 (
@@ -83,7 +84,24 @@ class NewClassForm extends Component {
 						Rowing<input name="rowing" type="checkbox" onChange={this.handleCheckbox} value={this.state.rowing} />
 						Barre<input name="barre" type="checkbox" onChange={this.handleCheckbox} value={this.state.barre} />
 						Strength Training<input name="strength_training" type="checkbox" onChange={this.handleCheckbox} value={this.state.strength_training} />
-
+					<div><input type="submit" /></div>
+				</form>
+				<h1>Add Details to Class</h1>
+				<form onSubmit={this.handleDetailSubmit}>
+						<input type="hidden" name="studio_id" value={this.props.currentAdmin.studios[0].id} />
+						<div><label>Select the Class</label>
+						
+						<select>
+					{
+								// this.props.currentAdmin.map(function(fc) {
+								// 	return <option value={fc.name}>{fc.name}</option>
+								// })
+							}
+						</select></div>
+						<div><label>Instructor Name</label>
+						<input name="name" type="text" onChange={this.handleChange} value={this.state.name}/></div>
+						<div><label>Date/Time</label>
+						<input name="time" type="datetime-local" onChange={this.handleChange} value={this.state.time}/></div>
 					<div><input type="submit" /></div>
 				</form>
 			</div>
