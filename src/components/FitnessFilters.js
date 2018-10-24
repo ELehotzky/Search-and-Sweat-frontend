@@ -1,13 +1,28 @@
 import React, { Component } from 'react';
 import {connect} from "react-redux";
+import {ButtonToolbar, ToggleButtonGroup, ToggleButton} from "react-bootstrap";
+
+
+
 class FitnessFilters extends Component {
 
 	render() {
 		return (
 			<div>
-				<input onChange={this.props.handleOnChange} type="checkbox" name="cardio"/>Cardio
-				<input onChange={this.props.handleOnChange} type="checkbox" name="yoga"/>Yoga
-				<input onChange={this.props.handleOnChange} type="checkbox" name="pilates"/>Pilates
+				<ButtonToolbar>
+					<ToggleButtonGroup type="checkbox">
+					<ToggleButton onChange={this.props.handleOnChange} value="cardio" name="cardio">Cardio</ToggleButton>
+					<ToggleButton onChange={this.props.handleOnChange} value="spin" name="cardio">Spin</ToggleButton>
+					<ToggleButton onChange={this.props.handleOnChange} value="pilates" name="cardio">Pilates</ToggleButton>
+					<ToggleButton onChange={this.props.handleOnChange} value="circuit_training" name="cardio">Circuit Training</ToggleButton>
+					<ToggleButton onChange={this.props.handleOnChange} value="kickboxing" name="cardio">Kickboxing</ToggleButton>
+					<ToggleButton onChange={this.props.handleOnChange} value="yoga" name="cardio">Yoga</ToggleButton>
+					<ToggleButton onChange={this.props.handleOnChange} value="boxing" name="cardio">Boxing</ToggleButton>
+					<ToggleButton onChange={this.props.handleOnChange} value="rowing" name="cardio">Rowing</ToggleButton>
+					<ToggleButton onChange={this.props.handleOnChange} value="barre" name="cardio">Barre</ToggleButton>
+					<ToggleButton onChange={this.props.handleOnChange} value="strength_training" name="cardio">Strength Training</ToggleButton>
+					</ToggleButtonGroup>
+				</ButtonToolbar>
 			</div>
 		);
 	}

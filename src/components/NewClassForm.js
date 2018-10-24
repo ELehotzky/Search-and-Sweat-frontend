@@ -52,8 +52,6 @@ class NewClassForm extends Component {
 	}
 	
 	render() {
-
-		console.log(this.props.currentAdmin)
 		return this.props.currentAdmin.name ? 
 		 (
 			<div>

@@ -5,8 +5,8 @@ export default class Header extends Component {
 
 	render() {
 		return(
-			<div id="header" style={{"height": "25%", "max-width": "auto"}}>
-			<div class="inner">
+			<div id="header" style={{"height": "25%"}}>
+			<div className="inner">
 				<header>
 					<h1><a id="logo">Helios</a></h1>
 				</header>

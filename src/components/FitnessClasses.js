@@ -1,5 +1,4 @@
 import React from "react";
-// import FitnessClass from "./FitnessClass.js"
 import classApi from "../api/classApi.js"
 import {connect} from "react-redux"
 import Time from "react-time"
