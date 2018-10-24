@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import {connect} from "react-redux";
 import {Link} from "react-router-dom";
-import {logOutSuccess} from "../actions/sessionActions.js"
+import {logOutSuccess} from "../actions/sessionActions.js";
+import Header from "../components/Header.js";
 
 class NewClassForm extends Component {
 	
@@ -56,6 +57,7 @@ class NewClassForm extends Component {
 		return this.props.currentAdmin.name ? 
 		 (
 			<div>
+			<Header />
 		{		<h3>Welcome, {this.props.currentAdmin.name}</h3>}
 				<Link to="/">
 					<button onClick={this.props.handleLogOut}>Log Out</button>

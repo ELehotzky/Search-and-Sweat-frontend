@@ -7,7 +7,6 @@ export default class Navbar extends Component {
 	render() {
 		return(
 			<div id="page-wrapper">
-			<Header />
 	            <nav id="nav">
 	              <ul>
 				    <li><NavLink

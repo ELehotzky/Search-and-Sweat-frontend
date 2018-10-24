@@ -4,7 +4,7 @@ import Header from "../components/Header.js"
 const About = () => {
   return (
     <div>
-    <Header />
+      <Header />
         <div className="wrapper style2">
           <article id="main" className="container special">
             <a href="#" className="image featured"><img src="images/pic06.jpg" alt="" /></a>

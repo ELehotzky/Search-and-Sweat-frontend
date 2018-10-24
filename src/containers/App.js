@@ -14,7 +14,6 @@ import * as sessionActions from "../actions/sessionActions.js"
 import {logInToken} from "../actions/sessionActions.js"
 import Footer from "../components/Footer.js"
 import Navbar from "../components/Navbar.js"
-import Header from "../components/Header.js"
 
 class App extends Component {
 
@@ -42,7 +41,6 @@ class App extends Component {
   render() {
     const isLoggedIn = this.props.isLoggedIn
     return (
-      <div id="page-wrapper">
         <Router>
           <React.Fragment>
             <Navbar />
@@ -55,7 +53,6 @@ class App extends Component {
             <Footer />
           </React.Fragment>
         </Router>
-      </div>
     );
   }
 }
