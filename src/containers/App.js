@@ -13,54 +13,8 @@ import NewClassForm from "../components/NewClassForm.js"
 import * as sessionActions from "../actions/sessionActions.js"
 import {logInToken} from "../actions/sessionActions.js"
 import Footer from "../components/Footer.js"
-import TemplateNav from "../components/TemplateNav.js"
 import Landing from "../components/Landing.js"
-
-const link = {
-  width: "100px",
-  padding: "12px",
-  margin: "0 6px 6px",
-  background: "lightgreen",
-  textDecoration: "none",
-  color: "white"
-}
-
-const Navbar = () => (
-  <div>
-    <NavLink
-      to="/"
-      exact
-      style={link}
-      activeStyle={{
-        background: "green"
-      }}
-      >Home</NavLink>
-    <NavLink
-      to="/about"
-      exact
-      style={link}
-      activeStyle={{
-        background: "green"
-      }}
-      >About</NavLink>
-    <NavLink
-      to="/contact"
-      exact
-      style={link}
-      activeStyle={{
-        background: "green"
-      }}
-      >Contact Us</NavLink>
-    <NavLink
-      to="/login"
-      exact
-      style={link}
-      activeStyle={{
-        background: "green"
-      }}
-      >Gym Login</NavLink>
-  </div>
-)
+import Navbar from "../components/Navbar.js"
 
 class App extends Component {
 
@@ -89,18 +43,15 @@ class App extends Component {
     const isLoggedIn = this.props.isLoggedIn
     return (
       <div>
-      <TemplateNav />
       <Landing />
 
 
     <div id="page-wrapper">
 
 
-
-
     </div>
 
-      <Footer />
+      
 
         <Router>
           <React.Fragment>
@@ -111,9 +62,9 @@ class App extends Component {
             <Route exact path="/classes" component={FitnessClassContainer} />
             <Route exact path="/contact" component={Contact} />
             <Route exact path="/form" component={!!localStorage.token ? NewClassForm : Home} />
+            <Footer />
           </React.Fragment>
         </Router>
-
 
       </div>
     );
