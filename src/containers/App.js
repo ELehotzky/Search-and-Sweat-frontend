@@ -12,8 +12,9 @@ import Contact from "../components/Contact.js"
 import NewClassForm from "../components/NewClassForm.js"
 import * as sessionActions from "../actions/sessionActions.js"
 import {logInToken} from "../actions/sessionActions.js"
-// import { Button, Card, Row, Col } from 'materialize-css';
-
+import Footer from "../components/Footer.js"
+import TemplateNav from "../components/TemplateNav.js"
+import Landing from "../components/Landing.js"
 
 const link = {
   width: "100px",
@@ -87,6 +88,20 @@ class App extends Component {
   render() {
     const isLoggedIn = this.props.isLoggedIn
     return (
+      <div>
+      <TemplateNav />
+      <Landing />
+
+
+    <div id="page-wrapper">
+
+
+
+
+    </div>
+
+      <Footer />
+
         <Router>
           <React.Fragment>
             <Navbar />
@@ -98,6 +113,9 @@ class App extends Component {
             <Route exact path="/form" component={!!localStorage.token ? NewClassForm : Home} />
           </React.Fragment>
         </Router>
+
+
+      </div>
     );
   }
 }
