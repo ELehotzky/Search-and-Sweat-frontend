@@ -42,17 +42,7 @@ class App extends Component {
   render() {
     const isLoggedIn = this.props.isLoggedIn
     return (
-      <div>
-      <Landing />
-
-
-    <div id="page-wrapper">
-
-
-    </div>
-
-      
-
+      <div id="page-wrapper">
         <Router>
           <React.Fragment>
             <Navbar />
@@ -65,7 +55,6 @@ class App extends Component {
             <Footer />
           </React.Fragment>
         </Router>
-
       </div>
     );
   }

@@ -6,15 +6,23 @@ class Home extends React.Component {
 
 	render() {
 	return (
-	    <div>
-		    <h1>Home!</h1>
-		    <div>
-		    	<NavLink to="/classes">
-		    	<button waves='light'>Explore Classes</button>
-		    	</NavLink>
-		    </div>
-	    </div>
-	    )
+					<div id="page-wrapper">
+		        <div id="header">
+		            <div className="inner">
+		              <header>
+		                <h1><a id="logo">Search & Sweat</a></h1>
+		                <hr />
+		                <p>Find your local fitness classes</p>
+		              </header>
+		              <NavLink to="/classes">
+		              <footer>
+		                <a className="button circled scrolly">Explore</a>
+		              </footer>
+		              </NavLink>
+		            </div>
+		        </div>
+	        </div>
+	        )
 	}
 }
 
