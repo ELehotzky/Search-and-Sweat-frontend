@@ -3,6 +3,7 @@ import React from "react";
 import classApi from "../api/classApi.js"
 import {connect} from "react-redux"
 import Time from "react-time"
+import Header from "../components/Header.js"
 
 class FitnessClasses extends React.Component {
   
@@ -45,6 +46,7 @@ class FitnessClasses extends React.Component {
 		} else 
 		return (
 			<div>
+				<Header />
 				<h1>Classes Page</h1> 
 		 		<ul>{this.props.FitnessClasses.filter(fClass => {
 		 			return this.checkIfFiltered(fClass)
