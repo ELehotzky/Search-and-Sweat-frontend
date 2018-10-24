@@ -1,11 +1,13 @@
 import React, {Component} from "react";
 import {BrowserRouter as Router, Route, NavLink} from "react-router-dom";
+import Header from "../components/Header.js"
 
 export default class Navbar extends Component {
 
 	render() {
 		return(
 			<div id="page-wrapper">
+			<Header />
 	            <nav id="nav">
 	              <ul>
 				    <li><NavLink

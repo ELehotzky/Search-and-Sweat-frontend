@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {connect} from "react-redux";
 import {Link} from "react-router-dom";
 import {logOutSuccess} from "../actions/sessionActions.js"
-// import { Button, Card, Row, Col } from 'materialize-css';
 
 class NewClassForm extends Component {
 	

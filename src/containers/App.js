@@ -13,8 +13,8 @@ import NewClassForm from "../components/NewClassForm.js"
 import * as sessionActions from "../actions/sessionActions.js"
 import {logInToken} from "../actions/sessionActions.js"
 import Footer from "../components/Footer.js"
-import Landing from "../components/Landing.js"
 import Navbar from "../components/Navbar.js"
+import Header from "../components/Header.js"
 
 class App extends Component {
 

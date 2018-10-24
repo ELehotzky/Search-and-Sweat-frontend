@@ -10,7 +10,6 @@ export default class Footer extends Component {
             <div className="row">
               <div className="col-12">
                 <hr />
-                {/*<!-- Contact -->*/}
                   <section className="contact">
                     <header>
                       <h3>Nisl turpis nascetur interdum?</h3>

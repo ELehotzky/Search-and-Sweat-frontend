@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
 import * as sessionActions from "../actions/sessionActions.js"
-// import { Button, Card, Row, Col } from 'materialize-css';
+import Header from "../components/Header.js"
 
 export class Login extends Component {
 
@@ -51,6 +51,7 @@ handleSubmit = (event) => {
   render() {
     return (
       <div>
+        <Header />
         <form onSubmit={this.handleSubmit}>
           <div>
             <input type="text" name="email" onChange={this.handleChange} value={this.state.credentials.email} placeholder="Email Address" />
