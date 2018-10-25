@@ -55,8 +55,15 @@ class NewClassForm extends Component {
 		return this.props.currentAdmin.name ? 
 		 (
 			<div>
-			<Header />
-		{		<h3>Welcome, {this.props.currentAdmin.name}</h3>}
+				<div id="header" style={{"height": "25%"}}>
+				<div className="inner">
+				<header>
+				<h1>Welcome, {this.props.currentAdmin.name}</h1>
+				<h2><a id="logo">Add a New Class</a></h2>
+				</header>
+				</div>
+				</div>
+				
 				<Link to="/">
 					<button onClick={this.props.handleLogOut}>Log Out</button>
 				</Link>

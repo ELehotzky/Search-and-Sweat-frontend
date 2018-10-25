@@ -8,7 +8,7 @@ export default class Header extends Component {
 			<div id="header" style={{"height": "25%"}}>
 			<div className="inner">
 				<header>
-					<h1><a id="logo">Helios</a></h1>
+					<h1><a id="logo">Search for a Class</a></h1>
 				</header>
 			</div>
 			</div>

@@ -51,7 +51,13 @@ handleSubmit = (event) => {
   render() {
     return (
       <div>
-      <Header />
+        <div id="header" style={{"height": "25%"}}>
+        <div className="inner">
+        <header>
+        <h1><a id="logo">Log In</a></h1>
+        </header>
+        </div>
+        </div>
         <form onSubmit={this.handleSubmit}>
           <div>
             <input type="text" name="email" onChange={this.handleChange} value={this.state.credentials.email} placeholder="Email Address" />
