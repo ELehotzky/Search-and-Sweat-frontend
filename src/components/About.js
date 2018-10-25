@@ -6,7 +6,7 @@ const About = () => {
         <div id="header" style={{"height": "25%"}}>
         <div className="inner">
         <header>
-        <h1>About Us</h1>
+        <h1 style={{"color": "#59CD90"}}>About Us</h1>
         </header>
         </div>
         </div>

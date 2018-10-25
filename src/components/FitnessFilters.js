@@ -12,22 +12,22 @@ class FitnessFilters extends Component {
 			<div id="header" style={{"height": "25%"}}>
 				<div className="inner">
 					<header>
-						<h1>Search for a Class</h1>
+						<h1 style={{"color": "#59CD90"}}>Search for a Class</h1>
 					</header>
 				</div>
 			</div>
 			<form>
 				<FormGroup>
-					<a className="check"><Checkbox inline onChange={this.props.handleOnChange} name="cardio">Cardio</Checkbox></a>
-					<a className="check"><Checkbox inline onChange={this.props.handleOnChange} name="spin">Spin</Checkbox></a>
-					<a className="check"><Checkbox inline onChange={this.props.handleOnChange} name="pilates">Pilates</Checkbox></a>
-					<a className="check"><Checkbox inline onChange={this.props.handleOnChange} name="circuit_training">Circuit Training</Checkbox></a>
-					<a className="check"><Checkbox inline onChange={this.props.handleOnChange} name="kickboxing">Kickboxing</Checkbox></a>
-					<a className="check"><Checkbox inline onChange={this.props.handleOnChange} name="yoga">Yoga</Checkbox></a>
-					<a className="check"><Checkbox inline onChange={this.props.handleOnChange} name="boxing">Boxing</Checkbox></a>
-					<a className="check"><Checkbox inline onChange={this.props.handleOnChange} name="rowing">Rowing</Checkbox></a>
-					<a className="check"><Checkbox inline onChange={this.props.handleOnChange} name="barre">Barre</Checkbox></a>
-					<a className="check"><Checkbox inline onChange={this.props.handleOnChange} name="strength_training">Strength Training</Checkbox></a>
+					<Checkbox inline onChange={this.props.handleOnChange} name="cardio"><h4 className="check">Cardio</h4></Checkbox>
+					<Checkbox inline onChange={this.props.handleOnChange} name="spin"><h4 className="check">Spin</h4></Checkbox>
+					<Checkbox inline onChange={this.props.handleOnChange} name="pilates"><h4 className="check">Pilates</h4></Checkbox>
+					<Checkbox inline onChange={this.props.handleOnChange} name="circuit_training"><h4 className="check">Circuit Training</h4></Checkbox>
+					<Checkbox inline onChange={this.props.handleOnChange} name="kickboxing"><h4 className="check">Kickboxing</h4></Checkbox>
+					<Checkbox inline onChange={this.props.handleOnChange} name="yoga"><h4 className="check">Yoga</h4></Checkbox>
+					<Checkbox inline onChange={this.props.handleOnChange} name="boxing"><h4 className="check">Boxing</h4></Checkbox>
+					<Checkbox inline onChange={this.props.handleOnChange} name="rowing"><h4 className="check">Rowing</h4></Checkbox>
+					<Checkbox inline onChange={this.props.handleOnChange} name="barre"><h4 className="check">Barre</h4></Checkbox>
+					<Checkbox inline onChange={this.props.handleOnChange} name="strength_training"><h4 className="check">Strength Training</h4></Checkbox>
 				</FormGroup>
 			</form>
 			</div>

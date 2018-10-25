@@ -56,8 +56,7 @@ class NewClassForm extends Component {
 				<div id="header" style={{"height": "25%"}}>
 					<div className="inner">
 						<header>
-							<h1>Welcome, {this.props.currentAdmin.name}</h1>
-							<h2>Add a New Class</h2>
+							<h1>Welcome back, {this.props.currentAdmin.name}</h1>
 						</header>
 					</div>
 				</div>
@@ -65,7 +64,7 @@ class NewClassForm extends Component {
 				<Link to="/">
 					<button onClick={this.props.handleLogOut}>Log Out</button>
 				</Link>
-				<h1>Enter a new class</h1>
+				<h1>Add a new class to your schedule</h1>
 				<form onSubmit={this.handleSubmit}>
 						<input type="hidden" name="studio_id" value={this.props.currentAdmin.studios[0].id} /> 
 						<div><label>Class Name</label>
