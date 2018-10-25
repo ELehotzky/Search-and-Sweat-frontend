@@ -6,7 +6,7 @@ const Contact = () => {
         <div id="header" style={{"height": "25%"}}>
           <div className="inner">
           <header>
-          <h1 style={{"color": "#59CD90"}}>Contact Us</h1>
+          <h1>Contact Us</h1>
           </header>
         </div>
         </div>

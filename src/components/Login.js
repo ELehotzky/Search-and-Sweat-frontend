@@ -53,7 +53,7 @@ handleSubmit = (event) => {
         <div id="header" style={{"height": "25%"}}>
         <div className="inner">
         <header>
-        <h1><a id="logo">Log In</a></h1>
+        <h1>Log In</h1>
         </header>
         </div>
         </div>
