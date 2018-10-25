@@ -2,6 +2,7 @@ import React from "react";
 import classApi from "../api/classApi.js"
 import {connect} from "react-redux"
 import Time from "react-time"
+import Slider from "react-slick";
 
 class FitnessClasses extends React.Component {
   
@@ -38,6 +39,7 @@ class FitnessClasses extends React.Component {
 	}
 
 	render() {
+
 		if (this.props.FitnessClasses.length < 1) {
 			return (
 				<div>Loading...</div>)
@@ -51,15 +53,14 @@ class FitnessClasses extends React.Component {
 					</header>
 				</div>
 				</div>
-		 		<section className="carousel">
-		 		<div className="reel">
+				<Slider {...settings}>
 		 		{this.props.FitnessClasses.filter(fClass => {
 		 			return this.checkIfFiltered(fClass)
 		 		})
 		 			.map((oneClass, index) => (
 
 
-						<article key={index}>
+						<div key={index}>
 							<a href="#" className="image featured"><img src={"images/pic01.jpg"} alt="" /></a>
 							<header>
 								<h3>{oneClass.name}</h3>
@@ -68,15 +69,27 @@ class FitnessClasses extends React.Component {
 							<p>{this.mapDetails(oneClass)}</p>
 							<p>{this.mapCategories(oneClass)}</p>
 						 	<p>- {oneClass.description}</p>
-						</article>
+						</div>
 						
 				))}
-				</div>
-						</section>
+			</Slider>
 		 	</div>
 		)
 	}
 }
+
+const settings = {
+	className: "center",
+	infinite: true,
+	centerPadding: "60px",
+	slidesToShow: 5,
+	swipeToSlide: true,
+	afterChange: function(index) {
+	console.log(
+	`Slider Changed to: ${index + 1}, background: #222; color: #bada55`
+	);
+	}
+};
 
 
 function mapStateToProps(state) {
