@@ -1,5 +1,4 @@
 import React from "react";
-import Header from "../components/Header.js"
 
 const About = () => {
   return (
@@ -13,9 +12,9 @@ const About = () => {
         </div>
         <div className="wrapper style2">
           <article id="main" className="container special">
-            <a href="#" className="image featured"><img src="images/pic06.jpg" alt="" /></a>
+            <a className="image featured"><img src="images/pic06.jpg" alt="" /></a>
             <header>
-              <h2><a href="#">Sed massa imperdiet magnis</a></h2>
+              <h2>Sed massa imperdiet magnis</h2>
               <p>
                 Sociis aenean eu aenean mollis mollis facilisis primis ornare penatibus aenean. Cursus ac enim
                 pulvinar curabitur morbi convallis. Lectus malesuada sed fermentum dolore amet.
@@ -32,7 +31,7 @@ const About = () => {
               natoque aenean scelerisque.
             </p>
             <footer>
-              <a href="#" className="button">Continue Reading</a>
+              <a className="button">Continue Reading</a>
             </footer>
           </article>
         </div>

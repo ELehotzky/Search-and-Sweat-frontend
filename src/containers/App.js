@@ -6,12 +6,10 @@ import {bindActionCreators} from "redux";
 import Home from "../components/Home.js"
 import Login from "../components/Login.js"
 import About from "../components/About.js"
-import FitnessClasses from "../components/FitnessClasses.js"
 import FitnessClassContainer from "./FitnessClassContainer.js"
 import Contact from "../components/Contact.js"
 import NewClassForm from "../components/NewClassForm.js"
 import * as sessionActions from "../actions/sessionActions.js"
-import {logInToken} from "../actions/sessionActions.js"
 import Footer from "../components/Footer.js"
 import Navbar from "../components/Navbar.js"
 
@@ -38,7 +36,7 @@ class App extends Component {
 
 
   render() {
-    const isLoggedIn = this.props.isLoggedIn
+    // const isLoggedIn = this.props.isLoggedIn
     return (
         <Router>
           <React.Fragment>

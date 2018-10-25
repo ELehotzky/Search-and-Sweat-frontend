@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
 import * as sessionActions from "../actions/sessionActions.js"
-import Header from "../components/Header.js"
 
 export class Login extends Component {
 
