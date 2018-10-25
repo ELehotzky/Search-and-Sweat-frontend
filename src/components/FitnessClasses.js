@@ -26,7 +26,6 @@ class FitnessClasses extends React.Component {
 			oneClass.fitness_class_details.map((oneClass, index) => (
 				<div>
 					<p>Time: <Time value={oneClass.time} format="MM/DD/YYYY hh:mma" /></p>
-					<p>Instructor: {oneClass.instructor}</p>
 				</div>
 			))
 		)
