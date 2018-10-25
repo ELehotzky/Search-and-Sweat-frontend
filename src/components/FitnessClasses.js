@@ -43,13 +43,6 @@ class FitnessClasses extends React.Component {
 		} else 
 		return (
 			<div>
-				<div id="header" style={{"height": "25%"}}>
-				<div className="inner">
-					<header>
-						<h1>Search for a Class</h1>
-					</header>
-				</div>
-				</div>
 				<Slider {...settings}>
 		 		{this.props.FitnessClasses.filter(fClass => {
 		 			return this.checkIfFiltered(fClass)

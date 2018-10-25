@@ -8,6 +8,14 @@ class FitnessFilters extends Component {
 
 	render() {
 		return (
+			<div>
+			<div id="header" style={{"height": "25%"}}>
+				<div className="inner">
+					<header>
+						<h1>Search for a Class</h1>
+					</header>
+				</div>
+			</div>
 			<form>
 				<FormGroup>
 					<Checkbox inline onChange={this.props.handleOnChange} name="cardio">Cardio</Checkbox>
@@ -22,6 +30,7 @@ class FitnessFilters extends Component {
 					<Checkbox inline onChange={this.props.handleOnChange} name="strength_training">Strength Training</Checkbox>
 				</FormGroup>
 			</form>
+			</div>
 		);
 	}
 }
