@@ -51,19 +51,28 @@ class FitnessClasses extends React.Component {
 					</header>
 				</div>
 				</div>
-		 		<ul>{this.props.FitnessClasses.filter(fClass => {
+		 		<section className="carousel">
+		 		<div className="reel">
+		 		{this.props.FitnessClasses.filter(fClass => {
 		 			return this.checkIfFiltered(fClass)
 		 		})
 		 			.map((oneClass, index) => (
-						<li key={index}>
-							<h2>{oneClass.name}</h2>
+
+
+						<article key={index}>
+							<a href="#" className="image featured"><img src={"images/pic01.jpg"} alt="" /></a>
+							<header>
+								<h3>{oneClass.name}</h3>
+							</header>
 							<p>{oneClass.studio.name} -- ${oneClass.price}</p>
 							<p>{this.mapDetails(oneClass)}</p>
 							<p>{this.mapCategories(oneClass)}</p>
 						 	<p>- {oneClass.description}</p>
-						</li>
+						</article>
+						
 				))}
-				</ul>
+				</div>
+						</section>
 		 	</div>
 		)
 	}
