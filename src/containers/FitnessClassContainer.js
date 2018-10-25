@@ -7,11 +7,9 @@ export default class FitnessClassContainer extends Component {
 	render() {
 		return (
 			<div>
-				<FitnessClasses />
 				<FitnessFilters />
+				<FitnessClasses />
 			</div>
-			)
+		);
 	}
-
-
 }

@@ -2006,6 +2006,14 @@ input, select, textarea {
 		border: 0;
 	}
 
+	h4.check:hover {
+		background-color: #BCD8C1;
+	}
+
+	h4.check:checked {
+		background-color: black;
+	}
+
 /* Table */
 
 	table {
