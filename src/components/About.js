@@ -12,7 +12,6 @@ const About = () => {
         </div>
         <div className="wrapper style2">
           <article id="main" className="container special">
-            <a className="image featured"><img src="images/pic06.jpg" alt="" /></a>
             <header>
               <h2>Sed massa imperdiet magnis</h2>
               <p>

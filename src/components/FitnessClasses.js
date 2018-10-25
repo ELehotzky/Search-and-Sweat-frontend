@@ -2,6 +2,7 @@ import React from "react";
 import classApi from "../api/classApi.js"
 import {connect} from "react-redux"
 import Time from "react-time"
+import Slider from "react-slick";
 
 class FitnessClasses extends React.Component {
   
@@ -15,7 +16,7 @@ class FitnessClasses extends React.Component {
 	mapCategories(oneClass) {
 		return (
 			oneClass.fitness_class_categories.map((oneClass, index) => (
-				<p>Type: {oneClass.categoryName}</p>
+					<p key={index}>Type: {oneClass.categoryName}</p>
 			))
 		)
 	}
@@ -23,10 +24,7 @@ class FitnessClasses extends React.Component {
 	mapDetails(oneClass) {
 		return (
 			oneClass.fitness_class_details.map((oneClass, index) => (
-				<div>
-					<p>Time: <Time value={oneClass.time} format="MM/DD/YYYY hh:mma" /></p>
-					<p>Instructor: {oneClass.instructor}</p>
-				</div>
+					<p key={index}>Time: <Time value={oneClass.time} format="MM/DD/YYYY hh:mma" /></p>
 			))
 		)
 	}
@@ -38,6 +36,7 @@ class FitnessClasses extends React.Component {
 	}
 
 	render() {
+
 		if (this.props.FitnessClasses.length < 1) {
 			return (
 				<div>Loading...</div>)
@@ -51,15 +50,12 @@ class FitnessClasses extends React.Component {
 					</header>
 				</div>
 				</div>
-		 		<section className="carousel">
-		 		<div className="reel">
+				<Slider {...settings}>
 		 		{this.props.FitnessClasses.filter(fClass => {
 		 			return this.checkIfFiltered(fClass)
 		 		})
 		 			.map((oneClass, index) => (
-
-
-						<article key={index}>
+						<div key={index} style={{"margin": "10px"}}>
 							<a href="#" className="image featured"><img src={"images/pic01.jpg"} alt="" /></a>
 							<header>
 								<h3>{oneClass.name}</h3>
@@ -68,15 +64,50 @@ class FitnessClasses extends React.Component {
 							<p>{this.mapDetails(oneClass)}</p>
 							<p>{this.mapCategories(oneClass)}</p>
 						 	<p>- {oneClass.description}</p>
-						</article>
+						</div>
 						
 				))}
-				</div>
-						</section>
+			</Slider>
 		 	</div>
 		)
 	}
 }
+
+const settings = {
+	className: "center",
+	infinite: false,
+	centerPadding: "80px",
+	slidesToShow: 4,
+	swipeToSlide: true,
+	responsive: [
+		{
+	      breakpoint: 1024,
+	      settings: {
+	        slidesToShow: 3,
+	        slidesToScroll: 3,
+	        infinite: true,
+	        dots: true
+	      }
+	    },
+	    {
+	      breakpoint: 600,
+	      settings: {
+	        slidesToShow: 2,
+	        slidesToScroll: 2
+	      }
+	    },
+	    {
+	      breakpoint: 480,
+	      settings: {
+	        slidesToShow: 1,
+	        slidesToScroll: 1
+	      }
+    }
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+	]
+};
 
 
 function mapStateToProps(state) {
