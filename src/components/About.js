@@ -4,7 +4,13 @@ import Header from "../components/Header.js"
 const About = () => {
   return (
     <div>
-      <Header />
+        <div id="header" style={{"height": "25%"}}>
+        <div className="inner">
+        <header>
+        <h1>About Us</h1>
+        </header>
+        </div>
+        </div>
         <div className="wrapper style2">
           <article id="main" className="container special">
             <a href="#" className="image featured"><img src="images/pic06.jpg" alt="" /></a>

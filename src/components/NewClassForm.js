@@ -56,12 +56,12 @@ class NewClassForm extends Component {
 		 (
 			<div>
 				<div id="header" style={{"height": "25%"}}>
-				<div className="inner">
-				<header>
-				<h1>Welcome, {this.props.currentAdmin.name}</h1>
-				<h2><a id="logo">Add a New Class</a></h2>
-				</header>
-				</div>
+					<div className="inner">
+						<header>
+							<h1>Welcome, {this.props.currentAdmin.name}</h1>
+							<h2><a id="logo">Add a New Class</a></h2>
+						</header>
+					</div>
 				</div>
 				
 				<Link to="/">

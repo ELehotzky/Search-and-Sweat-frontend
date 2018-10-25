@@ -4,7 +4,13 @@ import Header from "../components/Header.js"
 const Contact = () => {
   return (
     <div id="page-wrapper">
-      <Header />
+        <div id="header" style={{"height": "25%"}}>
+          <div className="inner">
+          <header>
+          <h1>Contact Us</h1>
+          </header>
+        </div>
+        </div>
         <section id="banner">
           <header>
             <h2>Hi. You're looking at <strong>Helios</strong>.</h2>

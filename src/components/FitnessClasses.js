@@ -47,7 +47,7 @@ class FitnessClasses extends React.Component {
 				<div id="header" style={{"height": "25%"}}>
 				<div className="inner">
 					<header>
-						<h1><a id="logo">Search for a Class</a></h1>
+						<h1>Search for a Class</h1>
 					</header>
 				</div>
 				</div>
