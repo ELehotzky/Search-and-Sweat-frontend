@@ -2006,6 +2006,10 @@ input, select, textarea {
 		border: 0;
 	}
 
+	a.check:hover {
+		background-color: #BCD8C1;
+	}
+
 /* Table */
 
 	table {
