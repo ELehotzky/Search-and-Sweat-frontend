@@ -22,12 +22,12 @@ class NewClassForm extends Component {
 	}
 
 	handleCheckbox = (e) => {
+		console.log(e.target)
 		if (e.target.checked) {
 		this.setState({
 			category_ids: [...this.state.category_ids, e.target.value]
 		}, () => console.log(this.state))
 	} else {
-		// let unchecked = e.target.value
 		this.setState({ 
 			category_ids: this.state.category_ids.filter((unchecked, i) => i)
 		}, () => console.log(this.state))
@@ -36,7 +36,6 @@ class NewClassForm extends Component {
 
 	handleSubmit = (event) => {
 		event.preventDefault();
-		// this.props.addNewClass(this.state)
 		let formData = this.state;
 		formData.studio_id = this.props.currentAdmin.studios[0].id
 
@@ -80,17 +79,17 @@ class NewClassForm extends Component {
 						<div><label>Date/Time</label>
 						<input name="time" type="datetime-local" onChange={this.handleChange} value={this.state.time}/></div>
 						<FormGroup>
-						<div><label>Select Class Type(s): </label></div>
-						Cardio<Checkbox inline name="cardio" type="checkbox" onChange={this.handleCheckbox} value={21} />
-						Spin<Checkbox inline name="spin" type="checkbox" onChange={this.handleCheckbox} value={22} />
-						Circuit Training<Checkbox inline name="circuit_training" type="checkbox" onChange={this.handleCheckbox} value={23} />
-						Kickboxing<Checkbox inline name="kickboxing" type="checkbox" onChange={this.handleCheckbox} value={24} />
-						Yoga<Checkbox inline name="yoga" type="checkbox" onChange={this.handleCheckbox} value={25} />
-						Pilates<Checkbox inline name="pilates" type="checkbox" onChange={this.handleCheckbox} value={26} />
-						Boxing<Checkbox inline name="boxing" type="checkbox" onChange={this.handleCheckbox} value={27} />
-						Rowing<Checkbox inline name="rowing" type="checkbox" onChange={this.handleCheckbox} value={28} />
-						Barre<Checkbox inline name="barre" type="checkbox" onChange={this.handleCheckbox} value={29} />
-						Strength Training<Checkbox inline name="strength_training" type="checkbox" onChange={this.handleCheckbox} value={30} />
+							<div><label>Select Class Type(s): </label></div>
+							<Checkbox inline name="cardio" type="checkbox" onChange={this.handleCheckbox} value={21}>Cardio</Checkbox>
+							<Checkbox inline name="spin" type="checkbox" onChange={this.handleCheckbox} value={22}>Spin</Checkbox>
+							<Checkbox inline name="circuit_training" type="checkbox" onChange={this.handleCheckbox} value={23}>Circuit Training</Checkbox>
+							<Checkbox inline name="kickboxing" type="checkbox" onChange={this.handleCheckbox} value={24}>Kickboxing</Checkbox>
+							<Checkbox inline name="yoga" type="checkbox" onChange={this.handleCheckbox} value={25}>Yoga</Checkbox>
+							<Checkbox inline name="pilates" type="checkbox" onChange={this.handleCheckbox} value={26}>Pilates</Checkbox>
+							<Checkbox inline name="boxing" type="checkbox" onChange={this.handleCheckbox} value={27}>Boxing</Checkbox>
+							<Checkbox inline name="rowing" type="checkbox" onChange={this.handleCheckbox} value={28}>Rowing</Checkbox>
+							<Checkbox inline name="barre" type="checkbox" onChange={this.handleCheckbox} value={29}>Barre</Checkbox>
+							<Checkbox inline name="strength_training" type="checkbox" onChange={this.handleCheckbox} value={30}>Strength Training</Checkbox>
 						</FormGroup>
 					<div><input type="submit" /></div>
 				</form>
