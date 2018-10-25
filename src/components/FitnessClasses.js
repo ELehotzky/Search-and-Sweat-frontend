@@ -16,7 +16,7 @@ class FitnessClasses extends React.Component {
 	mapCategories(oneClass) {
 		return (
 			oneClass.fitness_class_categories.map((oneClass, index) => (
-				<p>Type: {oneClass.categoryName}</p>
+					<p key={index}>Type: {oneClass.categoryName}</p>
 			))
 		)
 	}
@@ -24,9 +24,7 @@ class FitnessClasses extends React.Component {
 	mapDetails(oneClass) {
 		return (
 			oneClass.fitness_class_details.map((oneClass, index) => (
-				<div>
-					<p>Time: <Time value={oneClass.time} format="MM/DD/YYYY hh:mma" /></p>
-				</div>
+					<p key={index}>Time: <Time value={oneClass.time} format="MM/DD/YYYY hh:mma" /></p>
 			))
 		)
 	}
@@ -57,9 +55,7 @@ class FitnessClasses extends React.Component {
 		 			return this.checkIfFiltered(fClass)
 		 		})
 		 			.map((oneClass, index) => (
-
-
-						<div key={index}>
+						<div key={index} style={{"margin": "10px"}}>
 							<a href="#" className="image featured"><img src={"images/pic01.jpg"} alt="" /></a>
 							<header>
 								<h3>{oneClass.name}</h3>
@@ -79,15 +75,38 @@ class FitnessClasses extends React.Component {
 
 const settings = {
 	className: "center",
-	infinite: true,
-	centerPadding: "60px",
-	slidesToShow: 5,
+	infinite: false,
+	centerPadding: "80px",
+	slidesToShow: 4,
 	swipeToSlide: true,
-	afterChange: function(index) {
-	console.log(
-	`Slider Changed to: ${index + 1}, background: #222; color: #bada55`
-	);
-	}
+	responsive: [
+		{
+	      breakpoint: 1024,
+	      settings: {
+	        slidesToShow: 3,
+	        slidesToScroll: 3,
+	        infinite: true,
+	        dots: true
+	      }
+	    },
+	    {
+	      breakpoint: 600,
+	      settings: {
+	        slidesToShow: 2,
+	        slidesToScroll: 2
+	      }
+	    },
+	    {
+	      breakpoint: 480,
+	      settings: {
+	        slidesToShow: 1,
+	        slidesToScroll: 1
+	      }
+    }
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+	]
 };
 
 
