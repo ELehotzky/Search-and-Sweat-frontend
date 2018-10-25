@@ -19,7 +19,6 @@ class App extends Component {
 
   componentDidMount() {
   const token = localStorage.token;
-  console.log(token)
    if (token !== "undefined"){
       fetch("http://localhost:3000/api/v1/profile", {
           method: "GET", 

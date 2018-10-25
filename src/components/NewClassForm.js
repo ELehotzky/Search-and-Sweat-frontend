@@ -74,16 +74,16 @@ class NewClassForm extends Component {
 						<div><label>Date/Time</label>
 						<input name="time" type="datetime-local" onChange={this.handleChange} value={this.state.time}/></div>
 						<div><label>Select Class Type(s): </label></div>
-						Cardio<input name="cardio" type="checkbox" onChange={this.handleCheckbox} value={11} />
-						Spin<input name="spin" type="checkbox" onChange={this.handleCheckbox} value={12} />
-						Pilates<input name="pilates" type="checkbox" onChange={this.handleCheckbox} value={13} />
-						Circuit Training<input name="circuit_training" type="checkbox" onChange={this.handleCheckbox} value={14} />
-						Kickboxing<input name="kickboxing" type="checkbox" onChange={this.handleCheckbox} value={15} />
-						Yoga<input name="yoga" type="checkbox" onChange={this.handleCheckbox} value={16} />
-						Boxing<input name="boxing" type="checkbox" onChange={this.handleCheckbox} value={17} />
-						Rowing<input name="rowing" type="checkbox" onChange={this.handleCheckbox} value={18} />
-						Barre<input name="barre" type="checkbox" onChange={this.handleCheckbox} value={19} />
-						Strength Training<input name="strength_training" type="checkbox" onChange={this.handleCheckbox} value={20} />
+						Cardio<input name="cardio" type="checkbox" onChange={this.handleCheckbox} value={21} />
+						Spin<input name="spin" type="checkbox" onChange={this.handleCheckbox} value={22} />
+						Circuit Training<input name="circuit_training" type="checkbox" onChange={this.handleCheckbox} value={23} />
+						Kickboxing<input name="kickboxing" type="checkbox" onChange={this.handleCheckbox} value={24} />
+						Yoga<input name="yoga" type="checkbox" onChange={this.handleCheckbox} value={25} />
+						Pilates<input name="pilates" type="checkbox" onChange={this.handleCheckbox} value={26} />
+						Boxing<input name="boxing" type="checkbox" onChange={this.handleCheckbox} value={27} />
+						Rowing<input name="rowing" type="checkbox" onChange={this.handleCheckbox} value={28} />
+						Barre<input name="barre" type="checkbox" onChange={this.handleCheckbox} value={29} />
+						Strength Training<input name="strength_training" type="checkbox" onChange={this.handleCheckbox} value={30} />
 					<div><input type="submit" /></div>
 				</form>
 				<h1>Add Details to Class</h1>
