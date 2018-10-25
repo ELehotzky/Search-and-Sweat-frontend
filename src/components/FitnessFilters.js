@@ -1,14 +1,27 @@
 import React, { Component } from 'react';
 import {connect} from "react-redux";
+import {FormGroup, Checkbox} from "react-bootstrap";
+
+
+
 class FitnessFilters extends Component {
 
 	render() {
 		return (
-			<div>
-				<input onChange={this.props.handleOnChange} type="checkbox" name="cardio"/>Cardio
-				<input onChange={this.props.handleOnChange} type="checkbox" name="yoga"/>Yoga
-				<input onChange={this.props.handleOnChange} type="checkbox" name="pilates"/>Pilates
-			</div>
+			<form>
+				<FormGroup>
+					<Checkbox inline onChange={this.props.handleOnChange} name="cardio">Cardio</Checkbox>
+					<Checkbox inline onChange={this.props.handleOnChange} name="spin">Spin</Checkbox>
+					<Checkbox inline onChange={this.props.handleOnChange} name="pilates">Pilates</Checkbox>
+					<Checkbox inline onChange={this.props.handleOnChange} name="circuit_training">Circuit Training</Checkbox>
+					<Checkbox inline onChange={this.props.handleOnChange} name="kickboxing">Kickboxing</Checkbox>
+					<Checkbox inline onChange={this.props.handleOnChange} name="yoga">Yoga</Checkbox>
+					<Checkbox inline onChange={this.props.handleOnChange} name="boxing">Boxing</Checkbox>
+					<Checkbox inline onChange={this.props.handleOnChange} name="rowing">Rowing</Checkbox>
+					<Checkbox inline onChange={this.props.handleOnChange} name="barre">Barre</Checkbox>
+					<Checkbox inline onChange={this.props.handleOnChange} name="strength_training">Strength Training</Checkbox>
+				</FormGroup>
+			</form>
 		);
 	}
 }
@@ -22,6 +35,7 @@ function mapDispatchToProps(dispatch) {
 
 function handleOnChange (e) {
 		console.log(e.target.name)
+		console.log(e.target.checked)
 		if (e.target.checked) {
 			return {type: "ADD_TO_FILTER", payload: e.target.name}
 		}

@@ -10,19 +10,15 @@ export default class Footer extends Component {
             <div className="row">
               <div className="col-12">
                 <hr />
-                {/*<!-- Contact -->*/}
                   <section className="contact">
                     <header>
-                      <h3>Nisl turpis nascetur interdum?</h3>
+                      <h3>Want to see more?</h3>
                     </header>
-                    <p>Urna nisl non quis interdum mus ornare ridiculus egestas ridiculus lobortis vivamus tempor aliquet.</p>
+                    <p>This site was created by Erica Lehotzky, a Full Stack Software Engineering student at Flatiron School.</p>
                     <ul className="icons">
-                      <li><a href="#" className="icon fa-twitter"><span className="label">Twitter</span></a></li>
-                      <li><a href="#" className="icon fa-facebook"><span className="label">Facebook</span></a></li>
-                      <li><a href="#" className="icon fa-instagram"><span className="label">Instagram</span></a></li>
-                      <li><a href="#" className="icon fa-pinterest"><span className="label">Pinterest</span></a></li>
-                      <li><a href="#" className="icon fa-dribbble"><span className="label">Dribbble</span></a></li>
-                      <li><a href="#" className="icon fa-linkedin"><span className="label">Linkedin</span></a></li>
+                      <li><a href="https://twitter.com/ericalehotzky" target="_blank" rel="noopener noreferrer" className="icon fa-twitter"><span className="label">Twitter</span></a></li>
+                      <li><a href="https://www.linkedin.com/in/ericalehotzky/" className="icon fa-github" target="_blank" rel="noopener noreferrer"><span className="label">Github</span></a></li>
+                      <li><a href="https://github.com/elehotzky" className="icon fa-linkedin" target="_blank" rel="noopener noreferrer"><span className="label">Linkedin</span></a></li>
                     </ul>
                   </section>
                   </div>

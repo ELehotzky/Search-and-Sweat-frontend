@@ -1,6 +1,5 @@
 class SessionApi {
 	static login(credentials) {
-		console.log(credentials)
 		const request = new Request("http://localhost:3000/api/v1/login", {
 			method: "POST",
 			headers: new Headers({
@@ -10,10 +9,8 @@ class SessionApi {
 		});
 
 		return fetch(request).then(resp => {
-			console.log("response", resp)
 			return resp.json();
 		}).catch(error => {
-			console.log("error")
 			return error;
 		});
 	}

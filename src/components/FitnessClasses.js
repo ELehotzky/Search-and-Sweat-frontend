@@ -1,5 +1,4 @@
 import React from "react";
-// import FitnessClass from "./FitnessClass.js"
 import classApi from "../api/classApi.js"
 import {connect} from "react-redux"
 import Time from "react-time"
@@ -45,20 +44,35 @@ class FitnessClasses extends React.Component {
 		} else 
 		return (
 			<div>
-				<h1>Classes Page</h1> 
-		 		<ul>{this.props.FitnessClasses.filter(fClass => {
+				<div id="header" style={{"height": "25%"}}>
+				<div className="inner">
+					<header>
+						<h1>Search for a Class</h1>
+					</header>
+				</div>
+				</div>
+		 		<section className="carousel">
+		 		<div className="reel">
+		 		{this.props.FitnessClasses.filter(fClass => {
 		 			return this.checkIfFiltered(fClass)
 		 		})
 		 			.map((oneClass, index) => (
-						<li key={index}>
-							<h2>{oneClass.name}</h2>
+
+
+						<article key={index}>
+							<a href="#" className="image featured"><img src={"images/pic01.jpg"} alt="" /></a>
+							<header>
+								<h3>{oneClass.name}</h3>
+							</header>
 							<p>{oneClass.studio.name} -- ${oneClass.price}</p>
 							<p>{this.mapDetails(oneClass)}</p>
 							<p>{this.mapCategories(oneClass)}</p>
 						 	<p>- {oneClass.description}</p>
-						</li>
+						</article>
+						
 				))}
-				</ul>
+				</div>
+						</section>
 		 	</div>
 		)
 	}
